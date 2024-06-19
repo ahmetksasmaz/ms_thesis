@@ -26,8 +26,11 @@ pip3 install -r requirements.txt
 ### Tested Environment
 
 OS : Ubuntu 24.04 LTS
+
 CPU : Intel® Core™ i7-10750H × 12
+
 RAM : 24.0 GiB
+
 GPU : NVIDIA GeForce GTX 1650 Ti
 
 Warning : Due to GPU in the tested environment was not sufficient for inferencing, CPU is used for inference.
@@ -41,6 +44,7 @@ export CUDA_VISIBLE_DEVICES=<your-cuda-device>
 ```
 
 Note : Do not forget to add cudnn path to these environment variables
+
 ```
 export CUDNN_PATH=/path/to/python/cudnn
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/to/python/cudnn/lib
@@ -55,6 +59,7 @@ export CUDA_VISIBLE_DEVICES=""
 ### Resources
 
 Pretrained model weight file for the LACT is provided in the repository. (use this when necessary as path : lact/weights/ckpt)
+
 If you want to validate, refer to original LACT repository [LACT Github](https://github.com/whdgusdl48/Luminance-aware-Color-Transform-ICCV-2023-)
 
 Because original dataset is approximately 2.9GB, resized dataset is provided for you.
