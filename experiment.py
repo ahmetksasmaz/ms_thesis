@@ -87,6 +87,9 @@ def main():
                 psnr_ = psnr(label, lact_prediction).numpy()
                 ssim_ = ssim(label, lact_prediction).numpy()
                 results_dict[image_path]["lact"] = (psnr_, ssim_)
+                cv.rectangle(lact_prediction, (resize_shape[0] - 120, 0), (resize_shape[0], 30), (255, 255, 255), -1)
+                cv.putText(lact_prediction, "psnr:"+str(psnr_), (resize_shape[0] - 120, 10), cv.FONT_HERSHEY_SIMPLEX , 0.4,  (255,0,0), 1, cv.LINE_AA) 
+                cv.putText(lact_prediction, "ssim:"+str(ssim_), (resize_shape[0] - 120, 30), cv.FONT_HERSHEY_SIMPLEX , 0.4,  (255,0,0), 1, cv.LINE_AA) 
                 merged[0:resize_shape[1],2*resize_shape[0]:3*resize_shape[0],:] = lact_prediction
                 output_file.write(image_path + "\t" + "lact" + "\t" + str(psnr_) + "\t" + str(ssim_) + "\n")
             if calculate_clahe:
@@ -94,6 +97,9 @@ def main():
                 psnr_ = psnr(label, clahe_prediction).numpy()
                 ssim_ = ssim(label, clahe_prediction).numpy()
                 results_dict[image_path]["clahe"] = (psnr_, ssim_)
+                cv.rectangle(clahe_prediction, (resize_shape[0] - 120, 0), (resize_shape[0], 30), (255, 255, 255), -1)
+                cv.putText(clahe_prediction, "psnr:"+str(psnr_), (resize_shape[0] - 120, 10), cv.FONT_HERSHEY_SIMPLEX , 0.4,  (255,0,0), 1, cv.LINE_AA) 
+                cv.putText(clahe_prediction, "ssim:"+str(ssim_), (resize_shape[0] - 120, 30), cv.FONT_HERSHEY_SIMPLEX , 0.4,  (255,0,0), 1, cv.LINE_AA) 
                 merged[0:resize_shape[1],3*resize_shape[0]:4*resize_shape[0],:] = clahe_prediction
                 output_file.write(image_path + "\t" + "clahe" + "\t" + str(psnr_) + "\t" + str(ssim_) + "\n")
             if calculate_gamma:
@@ -101,6 +107,9 @@ def main():
                 psnr_ = psnr(label, gamma_prediction).numpy()
                 ssim_ = ssim(label, gamma_prediction).numpy()
                 results_dict[image_path]["gamma"] = (psnr_, ssim_)
+                cv.rectangle(gamma_prediction, (resize_shape[0] - 120, 0), (resize_shape[0], 30), (255, 255, 255), -1)
+                cv.putText(gamma_prediction, "psnr:"+str(psnr_), (resize_shape[0] - 120, 10), cv.FONT_HERSHEY_SIMPLEX , 0.4,  (255,0,0), 1, cv.LINE_AA) 
+                cv.putText(gamma_prediction, "ssim:"+str(ssim_), (resize_shape[0] - 120, 30), cv.FONT_HERSHEY_SIMPLEX , 0.4,  (255,0,0), 1, cv.LINE_AA) 
                 merged[0:resize_shape[1],4*resize_shape[0]:5*resize_shape[0],:] = gamma_prediction
                 output_file.write(image_path + "\t" + "gamma" + "\t" + str(psnr_) + "\t" + str(ssim_) + "\n")
             cv.putText(merged, "LABEL", (0*resize_shape[0], 40), cv.FONT_HERSHEY_SIMPLEX , 1,  (255,0,0), 2, cv.LINE_AA) 
