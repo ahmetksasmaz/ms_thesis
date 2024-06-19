@@ -1,0 +1,464 @@
+<gen_light name=gen_light, built=False>
+         <Functional name=functional_3, built=True>
+                 <InputLayer name=input_layer_1, built=True>
+                 <Conv2D name=lightnet1_conv, built=True>
+                        tensor: lnet/layer_with_weights-0/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [5, 5, 16, 16]
+                 <BatchNormalization name=lightnet1_norm, built=True>
+                        tensor: lnet/layer_with_weights-1/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                        tensor: lnet/layer_with_weights-1/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                        tensor: lnet/layer_with_weights-1/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                        tensor: lnet/layer_with_weights-1/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                 <Activation name=lightnet1_act, built=True>
+                 <Dropout name=lightnet1_dropout, built=True>
+                 <Conv2D name=lightnet2_conv, built=True>
+                        tensor: lnet/layer_with_weights-2/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [7, 7, 16, 16]
+                 <BatchNormalization name=lightnet2_norm, built=True>
+                        tensor: lnet/layer_with_weights-3/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                        tensor: lnet/layer_with_weights-3/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                        tensor: lnet/layer_with_weights-3/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                        tensor: lnet/layer_with_weights-3/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                 <Activation name=lightnet2_act, built=True>
+                 <Dropout name=lightnet2_dropout, built=True>
+                 <Conv2D name=lightnet3_conv, built=True>
+                        tensor: lnet/layer_with_weights-4/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [7, 7, 16, 16]
+                 <BatchNormalization name=lightnet3_norm, built=True>
+                        tensor: lnet/layer_with_weights-5/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                        tensor: lnet/layer_with_weights-5/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                        tensor: lnet/layer_with_weights-5/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                        tensor: lnet/layer_with_weights-5/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                 <Activation name=lightnet3_act, built=True>
+                 <Dropout name=lightnet3_dropout, built=True>
+                 <Conv2D name=lightnet4_conv, built=True>
+                        tensor: lnet/layer_with_weights-6/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [5, 5, 16, 16]
+                 <BatchNormalization name=lightnet4_norm, built=True>
+                        tensor: lnet/layer_with_weights-7/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                        tensor: lnet/layer_with_weights-7/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                        tensor: lnet/layer_with_weights-7/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                        tensor: lnet/layer_with_weights-7/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                 <Activation name=lightnet4_act, built=True>
+                 <Dropout name=lightnet4_dropout, built=True>
+                 <Conv2D name=attention_conv_1_conv, built=True>
+                        tensor: lnet/layer_with_weights-8/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [5, 5, 16, 32]
+                 <BatchNormalization name=attention_conv_1_norm, built=True>
+                        tensor: lnet/layer_with_weights-9/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [32]
+                        tensor: lnet/layer_with_weights-9/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [32]
+                        tensor: lnet/layer_with_weights-9/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [32]
+                        tensor: lnet/layer_with_weights-9/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [32]
+                 <Activation name=attention_conv_1_act, built=True>
+                 <Dropout name=attention_conv_1_dropout, built=True>
+                 <Conv2D name=attention_conv_2_conv, built=True>
+                        tensor: lnet/layer_with_weights-10/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [7, 7, 32, 64]
+                 <BatchNormalization name=attention_conv_2_norm, built=True>
+                        tensor: lnet/layer_with_weights-11/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [64]
+                        tensor: lnet/layer_with_weights-11/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [64]
+                        tensor: lnet/layer_with_weights-11/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [64]
+                        tensor: lnet/layer_with_weights-11/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [64]
+                 <Activation name=attention_conv_2_act, built=True>
+                 <Dropout name=attention_conv_2_dropout, built=True>
+                 <Conv2D name=attention_conv_3_conv, built=True>
+                        tensor: lnet/layer_with_weights-12/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [5, 5, 64, 256]
+                 <BatchNormalization name=attention_conv_3_norm, built=True>
+                        tensor: lnet/layer_with_weights-13/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [256]
+                        tensor: lnet/layer_with_weights-13/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [256]
+                        tensor: lnet/layer_with_weights-13/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [256]
+                        tensor: lnet/layer_with_weights-13/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [256]
+                 <Activation name=attention_conv_3_act, built=True>
+                 <Dropout name=attention_conv_3_dropout, built=True>
+                 <GlobalAveragePooling2D name=global_average_pooling2d, built=True>
+                 <Reshape name=reshape_1, built=True>
+                 <Conv2D name=conv2d, built=True>
+                        tensor: lnet/layer_with_weights-14/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 256, 256]
+                 <Reshape name=reshape_2, built=True>
+                 <Reshape name=reshape, built=True>
+         <LuminanceAttention name=luminance_attention, built=True>
+                 <MultiHeadAttention name=multi_head_attention, built=True>
+                    tensor: attn_net/attention/dense/bias/.ATTRIBUTES/VARIABLE_VALUE (float32) [256]
+                    tensor: attn_net/attention/dense/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [256, 256]
+                    tensor: attn_net/attention/key_dense/bias/.ATTRIBUTES/VARIABLE_VALUE (float32) [256]
+                    tensor: attn_net/attention/key_dense/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [256, 256]
+                    tensor: attn_net/attention/query_dense/bias/.ATTRIBUTES/VARIABLE_VALUE (float32) [256]
+                    tensor: attn_net/attention/query_dense/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [256, 256]
+                    tensor: attn_net/attention/value_dense/bias/.ATTRIBUTES/VARIABLE_VALUE (float32) [256]
+                    tensor: attn_net/attention/value_dense/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [256, 256]
+                 <MultiHeadAttention name=multi_head_attention, built=True>
+                    tensor: attn_net/self_attention/dense/bias/.ATTRIBUTES/VARIABLE_VALUE (float32) [256]
+                    tensor: attn_net/self_attention/dense/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [256, 256]
+                    tensor: attn_net/self_attention/key_dense/bias/.ATTRIBUTES/VARIABLE_VALUE (float32) [256]
+                    tensor: attn_net/self_attention/key_dense/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [256, 256]
+                    tensor: attn_net/self_attention/query_dense/bias/.ATTRIBUTES/VARIABLE_VALUE (float32) [256]
+                    tensor: attn_net/self_attention/query_dense/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [256, 256]
+                    tensor: attn_net/self_attention/value_dense/bias/.ATTRIBUTES/VARIABLE_VALUE (float32) [256]
+                    tensor: attn_net/self_attention/value_dense/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [256, 256]
+                 <Dropout name=dropout, built=True>
+                 <Dropout name=dropout_1, built=True>
+                 <Dropout name=dropout_2, built=True>
+                 <MLP name=mlp, built=True>
+                    tensor: attn_net/mlp/net/layer_with_weights-0/bias/.ATTRIBUTES/VARIABLE_VALUE (float32) [1024]
+                    tensor: attn_net/mlp/net/layer_with_weights-0/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [256, 1024]
+                    tensor: attn_net/mlp/net/layer_with_weights-1/bias/.ATTRIBUTES/VARIABLE_VALUE (float32) [256]
+                    tensor: attn_net/mlp/net/layer_with_weights-1/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1024, 256]
+                 <LayerNormalization name=layer_normalization, built=True>
+                    tensor: attn_net/layernorm1/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [256]
+                    tensor: attn_net/layernorm1/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [256]
+                 <LayerNormalization name=layer_normalization_1, built=True>
+                    tensor: attn_net/layernorm2/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [256]
+                    tensor: attn_net/layernorm2/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [256]
+                 <LayerNormalization name=layer_normalization_2, built=True>
+                    tensor: attn_net/layernorm3/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [256]
+                    tensor: attn_net/layernorm3/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [256]
+         <Functional name=global_enhancement_network, built=True>
+                 <InputLayer name=input_layer_2, built=True>
+                 <Lambda name=input_resize, built=True>
+                 <Conv2D name=stage1_conv, built=True>
+                    tensor: global_net/layer_with_weights-0/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [5, 5, 3, 16]
+                 <BatchNormalization name=stage1_norm, built=True>
+                    tensor: global_net/layer_with_weights-1/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                    tensor: global_net/layer_with_weights-1/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                    tensor: global_net/layer_with_weights-1/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                    tensor: global_net/layer_with_weights-1/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                 <Activation name=stage1_act, built=True>
+                 <Dropout name=stage1_dropout, built=True>
+                 <Conv2D name=stage2_expand_conv, built=True>
+                    tensor: global_net/layer_with_weights-2/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 16, 192]
+                 <BatchNormalization name=stage2_expand_bn, built=True>
+                    tensor: global_net/layer_with_weights-3/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [192]
+                    tensor: global_net/layer_with_weights-3/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [192]
+                    tensor: global_net/layer_with_weights-3/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [192]
+                    tensor: global_net/layer_with_weights-3/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [192]
+                 <Activation name=stage2_expand_swish, built=True>
+                 <DepthwiseConv2D name=stage2_dwconv, built=True>
+                    tensor: global_net/layer_with_weights-4/depthwise_kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [5, 5, 192, 1]
+                 <BatchNormalization name=stage2_bn, built=True>
+                    tensor: global_net/layer_with_weights-5/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [192]
+                    tensor: global_net/layer_with_weights-5/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [192]
+                    tensor: global_net/layer_with_weights-5/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [192]
+                    tensor: global_net/layer_with_weights-5/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [192]
+                 <Activation name=stage2_swish, built=True>
+                 <GlobalAveragePooling2D name=stage2_se_squeeze, built=True>
+                 <Reshape name=stage2_se_reshape, built=True>
+                 <Conv2D name=stage2_se_reduce_conv, built=True>
+                    tensor: global_net/layer_with_weights-6/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 192, 8]
+                 <Activation name=stage2_se_expand_swish, built=True>
+                 <Conv2D name=stage2_se_expand_conv, built=True>
+                    tensor: global_net/layer_with_weights-7/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 8, 192]
+                 <Activation name=stage2_se_expand_sigmoid, built=True>
+                 <Multiply name=stage2_se_excite, built=True>
+                 <Conv2D name=stage2_project_conv, built=True>
+                    tensor: global_net/layer_with_weights-8/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 192, 40]
+                 <BatchNormalization name=stage2_project_bn, built=True>
+                    tensor: global_net/layer_with_weights-9/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [40]
+                    tensor: global_net/layer_with_weights-9/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [40]
+                    tensor: global_net/layer_with_weights-9/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [40]
+                    tensor: global_net/layer_with_weights-9/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [40]
+                 <Dropout name=stage2_dropout, built=True>
+                 <Conv2D name=stage3_expand_conv, built=True>
+                    tensor: global_net/layer_with_weights-10/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 40, 240]
+                 <BatchNormalization name=stage3_expand_bn, built=True>
+                    tensor: global_net/layer_with_weights-11/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [240]
+                    tensor: global_net/layer_with_weights-11/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [240]
+                    tensor: global_net/layer_with_weights-11/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [240]
+                    tensor: global_net/layer_with_weights-11/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [240]
+                 <Activation name=stage3_expand_swish, built=True>
+                 <DepthwiseConv2D name=stage3_dwconv, built=True>
+                    tensor: global_net/layer_with_weights-12/depthwise_kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [5, 5, 240, 1]
+                 <BatchNormalization name=stage3_bn, built=True>
+                    tensor: global_net/layer_with_weights-13/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [240]
+                    tensor: global_net/layer_with_weights-13/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [240]
+                    tensor: global_net/layer_with_weights-13/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [240]
+                    tensor: global_net/layer_with_weights-13/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [240]
+                 <Activation name=stage3_swish, built=True>
+                 <GlobalAveragePooling2D name=stage3_se_squeeze, built=True>
+                 <Reshape name=stage3_se_reshape, built=True>
+                 <Conv2D name=stage3_se_reduce_conv, built=True>
+                    tensor: global_net/layer_with_weights-14/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 240, 10]
+                 <Activation name=stage3_se_expand_swish, built=True>
+                 <Conv2D name=stage3_se_expand_conv, built=True>
+                    tensor: global_net/layer_with_weights-15/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 10, 240]
+                 <Activation name=stage3_se_expand_sigmoid, built=True>
+                 <Multiply name=stage3_se_excite, built=True>
+                 <Conv2D name=stage3_project_conv, built=True>
+                    tensor: global_net/layer_with_weights-16/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 240, 40]
+                 <BatchNormalization name=stage3_project_bn, built=True>
+                    tensor: global_net/layer_with_weights-17/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [40]
+                    tensor: global_net/layer_with_weights-17/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [40]
+                    tensor: global_net/layer_with_weights-17/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [40]
+                    tensor: global_net/layer_with_weights-17/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [40]
+                 <Dropout name=stage3_dropout, built=True>
+                 <Conv2D name=stage4_expand_conv, built=True>
+                    tensor: global_net/layer_with_weights-18/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 40, 240]
+                 <BatchNormalization name=stage4_expand_bn, built=True>
+                    tensor: global_net/layer_with_weights-19/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [240]
+                    tensor: global_net/layer_with_weights-19/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [240]
+                    tensor: global_net/layer_with_weights-19/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [240]
+                    tensor: global_net/layer_with_weights-19/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [240]
+                 <Activation name=stage4_expand_swish, built=True>
+                 <DepthwiseConv2D name=stage4_dwconv, built=True>
+                    tensor: global_net/layer_with_weights-20/depthwise_kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [5, 5, 240, 1]
+                 <BatchNormalization name=stage4_bn, built=True>
+                    tensor: global_net/layer_with_weights-21/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [240]
+                    tensor: global_net/layer_with_weights-21/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [240]
+                    tensor: global_net/layer_with_weights-21/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [240]
+                    tensor: global_net/layer_with_weights-21/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [240]
+                 <Activation name=stage4_swish, built=True>
+                 <GlobalAveragePooling2D name=stage4_se_squeeze, built=True>
+                 <Reshape name=stage4_se_reshape, built=True>
+                 <Conv2D name=stage4_se_reduce_conv, built=True>
+                    tensor: global_net/layer_with_weights-22/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 240, 10]
+                 <Activation name=stage4_se_expand_swish, built=True>
+                 <Conv2D name=stage4_se_expand_conv, built=True>
+                    tensor: global_net/layer_with_weights-23/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 10, 240]
+                 <Activation name=stage4_se_expand_sigmoid, built=True>
+                 <Multiply name=stage4_se_excite, built=True>
+                 <Conv2D name=stage4_project_conv, built=True>
+                    tensor: global_net/layer_with_weights-24/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 240, 80]
+                 <BatchNormalization name=stage4_project_bn, built=True>
+                    tensor: global_net/layer_with_weights-25/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [80]
+                    tensor: global_net/layer_with_weights-25/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [80]
+                    tensor: global_net/layer_with_weights-25/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [80]
+                    tensor: global_net/layer_with_weights-25/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [80]
+                 <Dropout name=stage4_dropout, built=True>
+                 <Conv2D name=stage5_expand_conv, built=True>
+                    tensor: global_net/layer_with_weights-26/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 80, 480]
+                 <BatchNormalization name=stage5_expand_bn, built=True>
+                    tensor: global_net/layer_with_weights-27/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [480]
+                    tensor: global_net/layer_with_weights-27/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [480]
+                    tensor: global_net/layer_with_weights-27/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [480]
+                    tensor: global_net/layer_with_weights-27/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [480]
+                 <Activation name=stage5_expand_swish, built=True>
+                 <DepthwiseConv2D name=stage5_dwconv, built=True>
+                    tensor: global_net/layer_with_weights-28/depthwise_kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [5, 5, 480, 1]
+                 <BatchNormalization name=stage5_bn, built=True>
+                    tensor: global_net/layer_with_weights-29/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [480]
+                    tensor: global_net/layer_with_weights-29/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [480]
+                    tensor: global_net/layer_with_weights-29/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [480]
+                    tensor: global_net/layer_with_weights-29/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [480]
+                 <Activation name=stage5_swish, built=True>
+                 <GlobalAveragePooling2D name=stage5_se_squeeze, built=True>
+                 <Reshape name=stage5_se_reshape, built=True>
+                 <Conv2D name=stage5_se_reduce_conv, built=True>
+                    tensor: global_net/layer_with_weights-30/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 480, 20]
+                 <Activation name=stage5_se_expand_swish, built=True>
+                 <Conv2D name=stage5_se_expand_conv, built=True>
+                    tensor: global_net/layer_with_weights-31/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 20, 480]
+                 <Activation name=stage5_se_expand_sigmoid, built=True>
+                 <Multiply name=stage5_se_excite, built=True>
+                 <Conv2D name=stage5_project_conv, built=True>
+                    tensor: global_net/layer_with_weights-32/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 480, 112]
+                 <BatchNormalization name=stage5_project_bn, built=True>
+                    tensor: global_net/layer_with_weights-33/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [112]
+                    tensor: global_net/layer_with_weights-33/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [112]
+                    tensor: global_net/layer_with_weights-33/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [112]
+                    tensor: global_net/layer_with_weights-33/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [112]
+                 <Dropout name=stage5_dropout, built=True>
+                 <Conv2D name=stage6_conv, built=True>
+                    tensor: global_net/layer_with_weights-34/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [3, 3, 112, 128]
+                 <BatchNormalization name=stage6_norm, built=True>
+                    tensor: global_net/layer_with_weights-35/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [128]
+                    tensor: global_net/layer_with_weights-35/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [128]
+                    tensor: global_net/layer_with_weights-35/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [128]
+                    tensor: global_net/layer_with_weights-35/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [128]
+                 <Activation name=stage6_act, built=True>
+                 <Dropout name=stage6_dropout, built=True>
+                 <Conv2D name=stage7_conv, built=True>
+                    tensor: global_net/layer_with_weights-36/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 128, 256]
+                 <BatchNormalization name=stage7_norm, built=True>
+                    tensor: global_net/layer_with_weights-37/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [256]
+                    tensor: global_net/layer_with_weights-37/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [256]
+                    tensor: global_net/layer_with_weights-37/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [256]
+                    tensor: global_net/layer_with_weights-37/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [256]
+                 <Activation name=stage7_act, built=True>
+                 <Dropout name=stage7_dropout, built=True>
+                 <Reshape name=reshape_3, built=True>
+                 <Reshape name=rchannel_reshape, built=True>
+                 <IntensitiyTransform name=intensity_transform, built=True>
+         <Functional name=local_enhancement_network, built=True>
+                 <InputLayer name=input_layer_4, built=True>
+                 <Conv2D name=stage1_conv, built=True>
+                    tensor: local_net/layer_with_weights-0/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [5, 5, 36, 16]
+                 <BatchNormalization name=stage1_norm, built=True>
+                    tensor: local_net/layer_with_weights-1/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                    tensor: local_net/layer_with_weights-1/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                    tensor: local_net/layer_with_weights-1/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                    tensor: local_net/layer_with_weights-1/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                 <Activation name=stage1_act, built=True>
+                 <Dropout name=stage1_dropout, built=True>
+                 <Conv2D name=stage2_expand_conv, built=True>
+                    tensor: local_net/layer_with_weights-2/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 16, 96]
+                 <BatchNormalization name=stage2_expand_bn, built=True>
+                    tensor: local_net/layer_with_weights-3/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [96]
+                    tensor: local_net/layer_with_weights-3/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [96]
+                    tensor: local_net/layer_with_weights-3/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [96]
+                    tensor: local_net/layer_with_weights-3/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [96]
+                 <Activation name=stage2_expand_swish, built=True>
+                 <DepthwiseConv2D name=stage2_dwconv, built=True>
+                    tensor: local_net/layer_with_weights-4/depthwise_kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [5, 5, 96, 1]
+                 <BatchNormalization name=stage2_bn, built=True>
+                    tensor: local_net/layer_with_weights-5/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [96]
+                    tensor: local_net/layer_with_weights-5/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [96]
+                    tensor: local_net/layer_with_weights-5/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [96]
+                    tensor: local_net/layer_with_weights-5/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [96]
+                 <Activation name=stage2_swish, built=True>
+                 <GlobalAveragePooling2D name=stage2_se_squeeze, built=True>
+                 <Reshape name=stage2_se_reshape, built=True>
+                 <Conv2D name=stage2_se_reduce_conv, built=True>
+                    tensor: local_net/layer_with_weights-6/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 96, 4]
+                 <Activation name=stage2_se_expand_swish, built=True>
+                 <Conv2D name=stage2_se_expand_conv, built=True>
+                    tensor: local_net/layer_with_weights-7/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 4, 96]
+                 <Activation name=stage2_se_expand_sigmoid, built=True>
+                 <Multiply name=stage2_se_excite, built=True>
+                 <Conv2D name=stage2_project_conv, built=True>
+                    tensor: local_net/layer_with_weights-8/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 96, 24]
+                 <BatchNormalization name=stage2_project_bn, built=True>
+                 tensor: local_net/layer_with_weights-9/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [24]
+                    tensor: local_net/layer_with_weights-9/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [24]
+                    tensor: local_net/layer_with_weights-9/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [24]
+                    tensor: local_net/layer_with_weights-9/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [24]
+                 <Dropout name=stage2_dropout, built=True>
+                 <Conv2D name=stage3_expand_conv, built=True>
+                    tensor: local_net/layer_with_weights-10/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 24, 144]
+                 <BatchNormalization name=stage3_expand_bn, built=True>
+                    tensor: local_net/layer_with_weights-11/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [144]
+                    tensor: local_net/layer_with_weights-11/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [144]
+                    tensor: local_net/layer_with_weights-11/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [144]
+                    tensor: local_net/layer_with_weights-11/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [144]
+                 <Activation name=stage3_expand_swish, built=True>
+                 <DepthwiseConv2D name=stage3_dwconv, built=True>
+                    tensor: local_net/layer_with_weights-12/depthwise_kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [5, 5, 144, 1]
+                 <BatchNormalization name=stage3_bn, built=True>
+                    tensor: local_net/layer_with_weights-13/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [144]
+                    tensor: local_net/layer_with_weights-13/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [144]
+                    tensor: local_net/layer_with_weights-13/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [144]
+                    tensor: local_net/layer_with_weights-13/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [144]
+                 <Activation name=stage3_swish, built=True>
+                 <GlobalAveragePooling2D name=stage3_se_squeeze, built=True>
+                 <Reshape name=stage3_se_reshape, built=True>
+                 <Conv2D name=stage3_se_reduce_conv, built=True>
+                    tensor: local_net/layer_with_weights-14/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 144, 6]
+                 <Activation name=stage3_se_expand_swish, built=True>
+                 <Conv2D name=stage3_se_expand_conv, built=True>
+                    tensor: local_net/layer_with_weights-15/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 6, 144]
+                 <Activation name=stage3_se_expand_sigmoid, built=True>
+                 <Multiply name=stage3_se_excite, built=True>
+                 <Conv2D name=stage3_project_conv, built=True>
+                    tensor: local_net/layer_with_weights-16/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 144, 40]
+                 <BatchNormalization name=stage3_project_bn, built=True>
+                    tensor: local_net/layer_with_weights-17/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [40]
+                    tensor: local_net/layer_with_weights-17/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [40]
+                    tensor: local_net/layer_with_weights-17/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [40]
+                    tensor: local_net/layer_with_weights-17/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [40]
+                 <Dropout name=stage3_dropout, built=True>
+                 <Conv2D name=stage4_expand_conv, built=True>
+                    tensor: local_net/layer_with_weights-18/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 40, 240]
+                 <BatchNormalization name=stage4_expand_bn, built=True>
+                    tensor: local_net/layer_with_weights-19/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [240]
+                    tensor: local_net/layer_with_weights-19/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [240]
+                    tensor: local_net/layer_with_weights-19/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [240]
+                    tensor: local_net/layer_with_weights-19/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [240]
+                 <Activation name=stage4_expand_swish, built=True>
+                 <DepthwiseConv2D name=stage4_dwconv, built=True>
+                    tensor: local_net/layer_with_weights-20/depthwise_kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [5, 5, 240, 1]
+                 <BatchNormalization name=stage4_bn, built=True>
+                    tensor: local_net/layer_with_weights-21/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [240]
+                    tensor: local_net/layer_with_weights-21/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [240]
+                    tensor: local_net/layer_with_weights-21/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [240]
+                    tensor: local_net/layer_with_weights-21/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [240]
+                 <Activation name=stage4_swish, built=True>
+                 <GlobalAveragePooling2D name=stage4_se_squeeze, built=True>
+                 <Reshape name=stage4_se_reshape, built=True>
+                 <Conv2D name=stage4_se_reduce_conv, built=True>
+                    tensor: local_net/layer_with_weights-22/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 240, 10]
+                 <Activation name=stage4_se_expand_swish, built=True>
+                 <Conv2D name=stage4_se_expand_conv, built=True>
+                    tensor: local_net/layer_with_weights-23/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 10, 240]
+                 <Activation name=stage4_se_expand_sigmoid, built=True>
+                 <Multiply name=stage4_se_excite, built=True>
+                 <Conv2D name=stage4_project_conv, built=True>
+                    tensor: local_net/layer_with_weights-24/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 240, 80]
+                 <BatchNormalization name=stage4_project_bn, built=True>
+                    tensor: local_net/layer_with_weights-25/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [80]
+                    tensor: local_net/layer_with_weights-25/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [80]
+                    tensor: local_net/layer_with_weights-25/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [80]
+                    tensor: local_net/layer_with_weights-25/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [80]
+                 <Dropout name=stage4_dropout, built=True>
+                 <Conv2D name=stage5_expand_conv, built=True>
+                    tensor: local_net/layer_with_weights-26/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 80, 480]
+                 <BatchNormalization name=stage5_expand_bn, built=True>
+                    tensor: local_net/layer_with_weights-27/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [480]
+                    tensor: local_net/layer_with_weights-27/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [480]
+                    tensor: local_net/layer_with_weights-27/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [480]
+                    tensor: local_net/layer_with_weights-27/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [480]
+                 <Activation name=stage5_expand_swish, built=True>
+                 <DepthwiseConv2D name=stage5_dwconv, built=True>
+                    tensor: local_net/layer_with_weights-28/depthwise_kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [5, 5, 480, 1]
+                 <BatchNormalization name=stage5_bn, built=True>
+                    tensor: local_net/layer_with_weights-29/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [480]
+                    tensor: local_net/layer_with_weights-29/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [480]
+                    tensor: local_net/layer_with_weights-29/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [480]
+                    tensor: local_net/layer_with_weights-29/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [480]
+                 <Activation name=stage5_swish, built=True>
+                 <GlobalAveragePooling2D name=stage5_se_squeeze, built=True>
+                 <Reshape name=stage5_se_reshape, built=True>
+                 <Conv2D name=stage5_se_reduce_conv, built=True>
+                    tensor: local_net/layer_with_weights-30/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 480, 20]
+                 <Activation name=stage5_se_expand_swish, built=True>
+                 <Conv2D name=stage5_se_expand_conv, built=True>
+                    tensor: local_net/layer_with_weights-31/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 20, 480]
+                 <Activation name=stage5_se_expand_sigmoid, built=True>
+                 <Multiply name=stage5_se_excite, built=True>
+                 <Conv2D name=stage5_project_conv, built=True>
+                    tensor: local_net/layer_with_weights-32/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 480, 24]
+                 <BatchNormalization name=stage5_project_bn, built=True>
+                    tensor: local_net/layer_with_weights-33/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [24]
+                    tensor: local_net/layer_with_weights-33/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [24]
+                    tensor: local_net/layer_with_weights-33/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [24]
+                    tensor: local_net/layer_with_weights-33/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [24]
+                 <Conv2D name=stage6_expand_conv, built=True>
+                    tensor: local_net/layer_with_weights-34/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 24, 144]
+                 <BatchNormalization name=stage6_expand_bn, built=True>
+                    tensor: local_net/layer_with_weights-35/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [144]
+                    tensor: local_net/layer_with_weights-35/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [144]
+                    tensor: local_net/layer_with_weights-35/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [144]
+                    tensor: local_net/layer_with_weights-35/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [144]
+                 <Activation name=stage6_expand_swish, built=True>
+                 <DepthwiseConv2D name=stage6_dwconv, built=True>
+                    tensor: local_net/layer_with_weights-36/depthwise_kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [5, 5, 144, 1]
+                 <BatchNormalization name=stage6_bn, built=True>
+                    tensor: local_net/layer_with_weights-37/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [144]
+                    tensor: local_net/layer_with_weights-37/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [144]
+                    tensor: local_net/layer_with_weights-37/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [144]
+                    tensor: local_net/layer_with_weights-37/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [144]
+                 <Activation name=stage6_swish, built=True>
+                 <GlobalAveragePooling2D name=stage6_se_squeeze, built=True>
+                 <Reshape name=stage6_se_reshape, built=True>
+                 <Conv2D name=stage6_se_reduce_conv, built=True>
+                    tensor: local_net/layer_with_weights-38/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 144, 6]
+                 <Activation name=stage6_se_expand_swish, built=True>
+                 <Conv2D name=stage6_se_expand_conv, built=True>
+                    tensor: local_net/layer_with_weights-39/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 6, 144]
+                 <Activation name=stage6_se_expand_sigmoid, built=True>
+                 <Multiply name=stage6_se_excite, built=True>
+                 <Conv2D name=stage6_project_conv, built=True>
+                    tensor: local_net/layer_with_weights-40/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 144, 16]
+                 <BatchNormalization name=stage6_project_bn, built=True>
+                    tensor: local_net/layer_with_weights-41/beta/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                    tensor: local_net/layer_with_weights-41/gamma/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                    tensor: local_net/layer_with_weights-41/moving_mean/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                    tensor: local_net/layer_with_weights-41/moving_variance/.ATTRIBUTES/VARIABLE_VALUE (float32) [16]
+                 <Conv2D name=stage7_conv, built=True>
+                    tensor: local_net/layer_with_weights-42/bias/.ATTRIBUTES/VARIABLE_VALUE (float32) [36]
+                    tensor: local_net/layer_with_weights-42/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [5, 5, 16, 36]
+                 <WeightedAdd name=add, built=True>
+                    tensor: local_net/layer_with_weights-43/add/.ATTRIBUTES/VARIABLE_VALUE (float32) [2]
+                 <Conv2D name=conv2d_1, built=True>
+                    tensor: local_net/layer_with_weights-44/bias/.ATTRIBUTES/VARIABLE_VALUE (float32) [3]
+                    tensor: local_net/layer_with_weights-44/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [1, 1, 36, 3]
+                 <Activation name=stage7_tanh, built=True>
+         <Concatenate name=concatenate, built=False>
+         <Dense name=dense_10, built=False>
+            tensor: fc/bias/.ATTRIBUTES/VARIABLE_VALUE (float32) [1]
+            tensor: fc/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [512, 1]
+         <Conv2D name=conv2d_2, built=False>
+            tensor: global_conv/bias/.ATTRIBUTES/VARIABLE_VALUE (float32) [3]
+            tensor: global_conv/kernel/.ATTRIBUTES/VARIABLE_VALUE (float32) [3, 3, 36, 3]
+         <Activation name=activation_1, built=False>
