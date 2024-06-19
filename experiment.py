@@ -9,6 +9,10 @@ import os
 import numpy as np
 import tqdm
 
+gpus = tf.config.experimental.list_physical_devices('GPU')
+if len(gpus) >= 1:
+    tf.config.experimental.set_visible_devices(gpus[0], 'GPU')
+
 def psnr(y_true, y_pred):
     return tf.reduce_mean(tf.image.psnr(y_true, y_pred, max_val=255))
 
