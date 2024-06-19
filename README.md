@@ -33,7 +33,7 @@ RAM : 24.0 GiB
 
 GPU : NVIDIA GeForce GTX 1650 Ti
 
-Warning : Due to GPU in the tested environment was not sufficient for inferencing, CPU is used for inference.
+Warning : Due to GPU in the tested environment was not sufficient for inferencing, CPU was used for inference.
 
 ### GPU-CPU Settings
 
