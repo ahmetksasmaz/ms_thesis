@@ -62,6 +62,7 @@ def main():
         calculate_lact = False
         calculate_clahe = False
         calculate_gamma = False
+        calculate_gamma_lact = False
         if image_path in results_dict.keys():
             if "lact" not in results_dict[image_path]:
                 calculate_lact = True
@@ -69,17 +70,20 @@ def main():
                 calculate_clahe = True
             if "gamma" not in results_dict[image_path]:
                 calculate_gamma = True
+            if "gamma_lact" not in results_dict[image_path]:
+                calculate_gamma_lact = True
         else:
             results_dict[image_path] = {}
             calculate_lact = True
             calculate_clahe = True
             calculate_gamma = True
-        if calculate_lact or calculate_clahe or calculate_gamma:
+            calculate_gamma_lact = True
+        if calculate_lact or calculate_clahe or calculate_gamma or calculate_gamma_lact:
             image = cv.imread(args["dataset_path"]+image_path)
             label = cv.imread(args["dataset_path"]+label_path)
             image = cv.resize(image, (resize_shape[0], resize_shape[1]))
             label = cv.resize(label, (resize_shape[0], resize_shape[1]))
-            merged = np.zeros((resize_shape[1], resize_shape[0]*5, 3), dtype = "uint8")
+            merged = np.zeros((resize_shape[1], resize_shape[0]*6, 3), dtype = "uint8")
             merged[0:resize_shape[1],0*resize_shape[0]:1*resize_shape[0],:] = label
             merged[0:resize_shape[1],1*resize_shape[0]:2*resize_shape[0],:] = image
             if calculate_lact:
@@ -112,11 +116,23 @@ def main():
                 cv.putText(gamma_prediction, "ssim:"+str(ssim_), (resize_shape[0] - 120, 30), cv.FONT_HERSHEY_SIMPLEX , 0.4,  (255,0,0), 1, cv.LINE_AA) 
                 merged[0:resize_shape[1],4*resize_shape[0]:5*resize_shape[0],:] = gamma_prediction
                 output_file.write(image_path + "\t" + "gamma" + "\t" + str(psnr_) + "\t" + str(ssim_) + "\n")
+            if calculate_gamma_lact:
+                gamma_prediction = gamma_applier(image)
+                gamma_lact_prediction = lact_inference(gamma_prediction)
+                psnr_ = psnr(label, gamma_lact_prediction).numpy()
+                ssim_ = ssim(label, gamma_lact_prediction).numpy()
+                results_dict[image_path]["gamma_lact"] = (psnr_, ssim_)
+                cv.rectangle(gamma_lact_prediction, (resize_shape[0] - 120, 0), (resize_shape[0], 30), (255, 255, 255), -1)
+                cv.putText(gamma_lact_prediction, "psnr:"+str(psnr_), (resize_shape[0] - 120, 10), cv.FONT_HERSHEY_SIMPLEX , 0.4,  (255,0,0), 1, cv.LINE_AA) 
+                cv.putText(gamma_lact_prediction, "ssim:"+str(ssim_), (resize_shape[0] - 120, 30), cv.FONT_HERSHEY_SIMPLEX , 0.4,  (255,0,0), 1, cv.LINE_AA) 
+                merged[0:resize_shape[1],5*resize_shape[0]:6*resize_shape[0],:] = gamma_lact_prediction
+                output_file.write(image_path + "\t" + "gamma_lact" + "\t" + str(psnr_) + "\t" + str(ssim_) + "\n")
             cv.putText(merged, "LABEL", (0*resize_shape[0], 40), cv.FONT_HERSHEY_SIMPLEX , 1,  (255,0,0), 2, cv.LINE_AA) 
             cv.putText(merged, "IMAGE", (1*resize_shape[0], 40), cv.FONT_HERSHEY_SIMPLEX , 1,  (255,0,0), 2, cv.LINE_AA) 
             cv.putText(merged, "LACT", (2*resize_shape[0], 40), cv.FONT_HERSHEY_SIMPLEX , 1,  (255,0,0), 2, cv.LINE_AA) 
             cv.putText(merged, "CLAHE", (3*resize_shape[0], 40), cv.FONT_HERSHEY_SIMPLEX , 1,  (255,0,0), 2, cv.LINE_AA) 
             cv.putText(merged, "GAMMA", (4*resize_shape[0], 40), cv.FONT_HERSHEY_SIMPLEX , 1,  (255,0,0), 2, cv.LINE_AA) 
+            cv.putText(merged, "GAMMA_LACT", (5*resize_shape[0], 40), cv.FONT_HERSHEY_SIMPLEX , 1,  (255,0,0), 2, cv.LINE_AA) 
             cv.imwrite(args["merged_predictions_path"]+image_path.replace("/", "_").replace(".", "_")+"_merged.jpg", merged)
     
     output_file.close()

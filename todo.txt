@@ -1,0 +1,13 @@
+1. When any of the field is empty for a record, load existing output image if there is
+    resize the image if the size does not match. Then update only the missing algorithm result.
+2. Multi Exposure dataset result parser
+3. SICE dataset result parser
+4. Implement a contrast sorter for label images, so that we can divide high contrast and low contrast scenes
+    then analyze scene constrast factor
+    (may be beneficial for examining light sources / light power / light positions and rotations)
+5. Implement a saturation sorter for label images, so that we can divide high saturation and low saturation scenes
+    then analyze scene saturation factor
+    (may be beneficial for examining scene/object color variety and weather conditions (foggy, cloudy, clear))
+6. Implement a brightness sorter for label images, so that we can divide darker scenes and lighter scenes
+    then analyze scene brightness factor
+    (may be beneficial for examining natural/artificial light sources, open and closed scenes, day/night comparison)
