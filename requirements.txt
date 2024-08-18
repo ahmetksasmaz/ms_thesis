@@ -2,3 +2,5 @@ numpy
 opencv-python
 tensorrt
 tensorflow[and-cuda]
+db-sqlite3
+pyqt5

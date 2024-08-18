@@ -1,0 +1,31 @@
+There will be gui
+    Gui will have start page
+        Start Page will select database adapter (for now, this is only sqlite)
+        Start Page will select database connection link (a database path for sqlite)
+        Start Page will select output images folder path
+        Start Page will have a button to initialize
+        This button will check
+            The database path is valid
+            Connection to the database is successful
+            The database organized properly
+            Output folder exists, otherwise create folder
+    Gui will have experimentation page that has tabs
+        Tab will be experimentation
+            We will select dataset folder path
+            We will select dataset database path
+            We will select experimentation resize width and height
+            We will select algorithms to experiment
+                Every algorithm has parameters to set
+            There will be calculate all option
+            There will be overwrite all option
+        Tab will be analyze
+            We will load database onto a table (after initialize)
+            We will reload database onto a table preserving sorting and filter parameters (onclick reload button)
+            We will sort a column
+            We will filter a column
+            We will filter non-complete rows
+            We will select a row and press 1 - 2 - 3 to load the results to the inspect
+            There will be inspect and compare region.
+                We will choose the slot for load output images
+            There will be analyze button
+                Will do some calculations on the fields (mean, std) and creates a report as text
